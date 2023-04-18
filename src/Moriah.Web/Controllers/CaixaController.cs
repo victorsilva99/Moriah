@@ -13,7 +13,13 @@ public class CaixaController : Controller
         _caixaAppService = caixaAppService;
     }
 
-    public IActionResult Index()
+    public async Task <IActionResult> Index()
+    {
+        var registros = await _caixaAppService.ObterTodosAsync();
+        return View(registros);
+    }
+    
+    public IActionResult NovoRegistro()
     {
         return View();
     }

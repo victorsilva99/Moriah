@@ -1,0 +1,32 @@
+﻿@using Moriah.Application.ViewModels;
+
+@model CaixaViewModel;
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+@using (Html.BeginForm("SalvarEntradas", "Caixa", FormMethod.Post))
+{
+    <div class="mb-3">
+        @Html.LabelFor(model=>model.Data, "Data", new { @class = "form-label" })
+        @Html.TextBoxFor(model => model.Data, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control" })
+    </div>
+
+    <div class="mb-3">
+        @Html.LabelFor(model => model.Nota, "Notas", new { @class = "form-label" })
+        @Html.TextBoxFor(model => model.Nota, new { @class = "form-control" })
+    </div>
+
+    <div class="mb-3">
+        @Html.LabelFor(model => model.Moeda, "Moedas", new { @class = "form-label" })
+        @Html.TextBoxFor(model => model.Moeda, new { @class = "form-control" })
+    </div>
+
+    <div class="mb-3">
+        @Html.LabelFor(model => model.Cartao, "Maquininha", new { @class = "form-label" })
+        @Html.TextBoxFor(model => model.Cartao, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+}

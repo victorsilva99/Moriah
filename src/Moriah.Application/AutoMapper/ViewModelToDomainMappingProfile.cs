@@ -9,11 +9,11 @@ namespace Moriah.Application.AutoMapper
         public ViewModelToDomainMappingProfile()
         {
             CreateMap<CaixaViewModel, Caixa>()
-                    .PreserveReferences()
-                    .ForMember(x => x.Data, opt => opt.MapFrom(scr => scr.Data))
-                    .ForMember(x => x.Nota, opt => opt.MapFrom(scr => scr.Nota))
-                    .ForMember(x => x.Moeda, opt => opt.MapFrom(scr => scr.Moeda))
-                    .ForMember(x => x.Cartao, opt => opt.MapFrom(scr => scr.Cartao));
+                .PreserveReferences()
+                .ForMember(x => x.Data, opt => opt.MapFrom(scr => scr.Data))
+                .ForMember(x => x.Nota, opt => opt.MapFrom(scr => scr.Nota))
+                .ForMember(x => x.Moeda, opt => opt.MapFrom(scr => scr.Moeda))
+                .ForMember(x => x.Cartao, opt => opt.MapFrom(scr => scr.Cartao));
         }
     }
 }

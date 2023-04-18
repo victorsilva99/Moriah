@@ -1,4 +1,5 @@
-﻿using Moriah.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using Moriah.Domain.Entities;
 using Moriah.Domain.Interfaces.Repositories;
 using Moriah.Infra.Data.Context;
 
@@ -17,5 +18,10 @@ public class CaixaRepository : ICaixaRepository
     {
         _context.Entradas?.Add(caixa);
         await _context.SaveChangesAsync();
+    }
+
+    public async Task<List<Caixa>> GetAll()
+    {
+        return await _context.Entradas?.ToListAsync();
     }
 }

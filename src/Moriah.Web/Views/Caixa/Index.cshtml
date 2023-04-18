@@ -1,6 +1,6 @@
-﻿@using Moriah.Application.ViewModels;
+﻿@using Moriah.Application.ViewModels
 
-@model CaixaViewModel;
+@model IEnumerable<CaixaViewModel>
 
 @{
     ViewData["Title"] = "Caixa";
@@ -9,27 +9,28 @@
 
 <h1>CAIXA</h1>
 
-@using (Html.BeginForm("SalvarEntradas", "Caixa", FormMethod.Post))
-{
-    <div class="mb-3">
-        @Html.LabelFor(model=>model.Data, "Data", new { @class = "form-label" })
-        @Html.TextBoxFor(model => model.Data, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control" })
-    </div>
+@Html.ActionLink("Novo registro", "NovoRegistro", "Caixa", null, new {@class = "btn btn-primary"})
 
-    <div class="mb-3">
-        @Html.LabelFor(model => model.Nota, "Notas", new { @class = "form-label" })
-        @Html.TextBoxFor(model => model.Nota, new { @class = "form-control" })
-    </div>
-
-    <div class="mb-3">
-        @Html.LabelFor(model => model.Moeda, "Moedas", new { @class = "form-label" })
-        @Html.TextBoxFor(model => model.Moeda, new { @class = "form-control" })
-    </div>
-
-    <div class="mb-3">
-        @Html.LabelFor(model => model.Cartao, "Maquininha", new { @class = "form-label" })
-        @Html.TextBoxFor(model => model.Cartao, new { @class = "form-control" })
-    </div>
-
-    <button type="submit" class="btn btn-primary">Salvar</button>
-}
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Data</th>
+      <th scope="col">Notas</th>
+      <th scope="col">Moedas</th>
+      <th scope="col">Cartao</th>
+      <th scope="col">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+  @foreach (var registro in Model)
+  {
+    <tr>
+      <td>@registro.Data.ToString("dd/MM/yyyy")</td>
+      <td>@($"{registro.Nota:C}")</td>
+      <td>@($"{registro.Moeda:C}")</td>
+      <td>@($"{registro.Cartao:C}")</td>
+      <td>@($"{registro.ObterTotal():C}")</td>
+    </tr>
+  }
+  </tbody>
+</table>

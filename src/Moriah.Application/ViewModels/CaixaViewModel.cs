@@ -9,6 +9,11 @@
         public decimal? Cartao { get; set; }
         public DateTime CriacaoRegistro { get; set; }
         public DateTime? UltimaAtualizacao { get; set; }
+
+        public decimal? ObterTotal()
+        {
+            return Nota + Moeda + Cartao;
+        }
     }
 }
 

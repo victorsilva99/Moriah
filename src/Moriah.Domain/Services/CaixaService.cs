@@ -18,4 +18,9 @@ public class CaixaService : ICaixaService
         caixa.CriacaoRegistro = DateTime.Now;
         await _caixaRepository.Insert(caixa);
     }
+
+    public async Task<IEnumerable<Caixa>> GetAll()
+    {
+        return await _caixaRepository.GetAll();
+    }
 }

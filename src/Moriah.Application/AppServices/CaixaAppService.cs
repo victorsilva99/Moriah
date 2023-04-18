@@ -22,5 +22,13 @@ namespace Moriah.Application.AppServices
             var map = _mapper.Map<Caixa>(caixa);
             await _caixaService.Insert(map);
         }
+
+        public async Task<IEnumerable<CaixaViewModel>> ObterTodosAsync()
+        {
+            var registros = await _caixaService.GetAll();
+            var map = _mapper.Map<IEnumerable<Caixa>, IEnumerable<CaixaViewModel>>(registros);
+
+            return map;
+        }
     }
 }

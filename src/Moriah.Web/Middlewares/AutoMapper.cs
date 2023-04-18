@@ -7,11 +7,13 @@ namespace Moriah.Web.Middlewares
     {
         public static IServiceCollection AddAutoMapper(this IServiceCollection services)
         {
-            var mapperConfig = new MapperConfiguration(cfg => {
+            var mapperConfig = new MapperConfiguration(cfg =>
+            {
                 cfg.AddProfile(new ViewModelToDomainMappingProfile());
+                cfg.AddProfile(new DomainToViewModelMappingProfile());
             });
 
-            IMapper mapper = mapperConfig.CreateMapper();
+            var mapper = mapperConfig.CreateMapper();
             services.AddSingleton(mapper);
 
             return services;

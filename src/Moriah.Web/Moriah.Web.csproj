@@ -16,8 +16,4 @@
     <ProjectReference Include="..\Moriah.Infra.Data\Moriah.Infra.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Extensions\" />
-  </ItemGroup>
-
 </Project>
