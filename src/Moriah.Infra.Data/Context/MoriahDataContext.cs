@@ -1,14 +1,17 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Moriah.Domain.Entities;
+using Moriah.Infra.Data.Mapping;
 
 namespace Moriah.Infra.Data.Context;
 
 public class MoriahDataContext : DbContext
 {
-    public DbSet<Caixa> Entradas { get; set; }
+    public MoriahDataContext(DbContextOptions<MoriahDataContext> options) : base (options){}
 
-    protected override void OnConfiguring(DbContextOptionsBuilder options)
+    public DbSet<Caixa>? Entradas { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        options.UseSqlServer("");
+        modelBuilder.ApplyConfiguration(new CaixaMapping());
     }
 }

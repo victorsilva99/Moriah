@@ -1,24 +1,37 @@
-var builder = WebApplication.CreateBuilder(args);
+using Serilog;
+using Moriah.Web.Middlewares;
+using Microsoft.EntityFrameworkCore;
+using Moriah.Infra.Data.Context;
 
-// Add services to the container.
+var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("SQLServer");
+var options = new DbContextOptionsBuilder<MoriahDataContext>()
+    .UseSqlServer(connectionString)
+    .Options;
+
 builder.Services.AddControllersWithViews();
 
-var app = builder.Build();
+builder.Services.AddRazorPages();
+builder.Services.RegisterServices(builder.Configuration);
+builder.Services.AddAutoMapper();
+builder.Services.AddMvc();
+builder.Services.AddDbContext<MoriahDataContext>(options => options.UseSqlServer(connectionString));
 
-// Configure the HTTP request pipeline.
+var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
+app.UseMiddleware<ErrorHandlingMiddleware>();
+
 
 app.MapControllerRoute(
     name: "default",

@@ -4,8 +4,9 @@ public class Caixa
 {
     public Guid Id { get; set; }
     public DateTime Data { get; set; }
-    public double? Nota { get; set; }
-    public double? Moeda { get; set; }
-    public double? Cartao_Debito { get; set; }
-    public double? Cartao_Credito { get; set; }
+    public decimal? Nota { get; set; }
+    public decimal? Moeda { get; set; }
+    public decimal? Cartao { get; set; }
+    public DateTime CriacaoRegistro { get; set; }
+    public DateTime? UltimaAtualizacao { get; set; }
 }
