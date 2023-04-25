@@ -19,8 +19,8 @@ public class CaixaService : ICaixaService
         await _caixaRepository.Insert(caixa);
     }
 
-    public async Task<IEnumerable<Caixa>> GetAll()
+    public async Task<IEnumerable<Caixa>> GetAllAsync()
     {
-        return await _caixaRepository.GetAll();
+        return await _caixaRepository.GetAllAsync();
     }
 }

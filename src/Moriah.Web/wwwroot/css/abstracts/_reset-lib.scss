@@ -1,0 +1,14 @@
+@import "variables";
+@import "fonts";
+
+.btn-primary {
+  background-color: $azul-principal !important;
+  color: $azul-marinho !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: background-color 0.3s ease !important;
+  
+  &:hover{
+    background-color: $azul-claro-esbranqueado !important;
+  }
+}

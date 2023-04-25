@@ -1,6 +1,37 @@
 ﻿@{
-    ViewData["Title"] = "Erro";
     Layout = null;
 }
 
-<h1>Ocorreu um erro!</h1>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Erro - MORIAH</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/css/views/erro/index.css" asp-append-version="true"/>
+</head>
+<body>
+
+<div class="container">
+    <main role="main" class="pb-3">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <img src="~/assets/icons/error.svg" alt="Erro!" class="img-fluid"/>
+                <h1>Ops... algo deu errado</h1>
+                <p>Lamentamos o inconveniente. Tente novamente mais tarde.</p>
+                <a class="btn btn-primary" href="/">Voltar para o início</a>
+            </div>
+        </div>
+    </main>
+</div>
+
+<footer class="border-top footer text-muted text-center">
+    <div class="container">
+        &copy; 2023 - Bazar e Papelaria MORIAH
+    </div>
+</footer>
+
+</body>
+</html>

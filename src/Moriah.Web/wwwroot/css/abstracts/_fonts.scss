@@ -1,0 +1,61 @@
+@import "variables";
+
+@font-face {
+  font-family: Montserrat;
+  src: url(../../assets/fonts/Montserrat-Thin.ttf);
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(../../assets/fonts/Montserrat-ExtraLight.ttf);
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(../../assets/fonts/Montserrat-Light.ttf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(../../assets/fonts/Montserrat-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(../../assets/fonts/Montserrat-Medium.ttf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(../../assets/fonts/Montserrat-SemiBold.ttf);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(../../assets/fonts/Montserrat-Bold.ttf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(../../assets/fonts/Montserrat-ExtraBold.ttf);
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(../../assets/fonts/Montserrat-Black.ttf);
+  font-weight: 900;
+}
+
+*, html, body, input, a, button, table, th, tr {
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  color: $azul-escuro-preto;
+}

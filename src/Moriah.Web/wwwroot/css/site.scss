@@ -1,0 +1,19 @@
+@import "abstracts/variables";
+@import "abstracts/fonts";
+@import "abstracts/reset-lib";
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+  font-size: 14px;
+}
+
+body {
+  margin-bottom: 60px;
+}
