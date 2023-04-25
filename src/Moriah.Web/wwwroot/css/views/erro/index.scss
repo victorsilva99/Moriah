@@ -1,0 +1,38 @@
+@import "../../abstracts/variables";
+@import "../../abstracts/reset-lib";
+
+body {
+  background-color: $azul-claro-gelo;
+  text-align: center;
+  padding-top: 50px;
+  
+  img{
+    max-width: 100%;
+    height: auto;
+    max-height: 200px;
+    margin-bottom: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  h1{
+    font-size: 36px;
+    color: $azul-marinho-escuro;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 18px;
+    color: $azul-marinho;
+    margin-bottom: 30px;
+  }
+}
+
+.footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}

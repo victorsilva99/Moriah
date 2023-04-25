@@ -16,4 +16,8 @@
     <ProjectReference Include="..\Moriah.Infra.Data\Moriah.Infra.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\css\erro\index.scss" />
+  </ItemGroup>
+
 </Project>

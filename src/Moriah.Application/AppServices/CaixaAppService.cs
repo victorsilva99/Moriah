@@ -25,7 +25,7 @@ namespace Moriah.Application.AppServices
 
         public async Task<IEnumerable<CaixaViewModel>> ObterTodosAsync()
         {
-            var registros = await _caixaService.GetAll();
+            var registros = await _caixaService.GetAllAsync();
             var map = _mapper.Map<IEnumerable<Caixa>, IEnumerable<CaixaViewModel>>(registros);
 
             return map;
