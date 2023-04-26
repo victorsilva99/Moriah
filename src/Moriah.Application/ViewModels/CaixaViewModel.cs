@@ -1,20 +1,17 @@
-﻿namespace Moriah.Application.ViewModels
-{
-    public class CaixaViewModel
-    {
-        public Guid Id { get; set; }
-        public DateTime Data { get; set; }
-        public decimal? Nota { get; set; }
-        public decimal? Moeda { get; set; }
-        public decimal? Cartao { get; set; }
-        public DateTime CriacaoRegistro { get; set; }
-        public DateTime? UltimaAtualizacao { get; set; }
+﻿namespace Moriah.Application.ViewModels;
 
-        public decimal? ObterTotal()
-        {
-            return Nota + Moeda + Cartao;
-        }
+public class CaixaViewModel
+{
+    public Guid Id { get; set; }
+    public DateTime Data { get; set; }
+    public decimal? Nota { get; set; }
+    public decimal? Moeda { get; set; }
+    public decimal? Cartao { get; set; }
+    public DateTime CriacaoRegistro { get; set; }
+    public DateTime? UltimaAtualizacao { get; set; }
+
+    public decimal? ObterTotal()
+    {
+        return Nota + Moeda + Cartao;
     }
 }
-
-

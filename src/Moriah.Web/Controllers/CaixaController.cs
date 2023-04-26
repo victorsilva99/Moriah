@@ -19,14 +19,30 @@ public class CaixaController : Controller
         return View(registros);
     }
     
+    [HttpGet]
     public IActionResult NovoRegistro()
     {
         return View();
     }
-
-    public async Task<IActionResult> SalvarEntradas(CaixaViewModel caixa)
+    
+    [HttpPost]
+    public async Task<IActionResult> NovoRegistro(CaixaViewModel caixa)
     {
         await _caixaAppService.Salvar(caixa);
+        return RedirectToAction("Index");
+    }
+    
+    [HttpGet]
+    public async Task<IActionResult> EditarRegistro([FromRoute] string id)
+    {
+        var registro = await _caixaAppService.ObterPorIdAsync(id);
+        return View(registro);
+    }
+    
+    [HttpPost]
+    public async Task<IActionResult> EditarRegistro(CaixaViewModel caixa)
+    {
+        await _caixaAppService.AtualizarRegistro(caixa);
         return RedirectToAction("Index");
     }
 }

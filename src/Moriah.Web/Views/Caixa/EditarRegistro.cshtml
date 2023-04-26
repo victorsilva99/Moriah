@@ -1,0 +1,38 @@
+@using Moriah.Application.ViewModels;
+@model CaixaViewModel
+
+@{
+    ViewData["Title"] = "Editar Registro";
+    Layout = "_Layout";
+}
+
+@using (Html.BeginForm("EditarRegistro", "Caixa", FormMethod.Post))
+{
+    @Html.HiddenFor(model => model.Id)
+    ;
+
+    <div class="mb-3">
+        <fieldset disabled>
+            <legend>A Data não pode ser alterada!</legend>
+            @Html.LabelFor(model => model.Data, "Data", new { @class = "form-label" })
+            @Html.TextBoxFor(model => model.Data, "{0:dd/MM/yyyy}", new { @class = "form-control" })
+        </fieldset>
+    </div>
+
+    <div class="mb-3">
+        @Html.LabelFor(model => model.Nota, "Notas", new { @class = "form-label" })
+        @Html.EditorFor(model => model.Nota, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+
+    <div class="mb-3">
+        @Html.LabelFor(model => model.Moeda, "Moedas", new { @class = "form-label" })
+        @Html.EditorFor(model => model.Moeda, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+
+    <div class="mb-3">
+        @Html.LabelFor(model => model.Cartao, "Maquininha", new { @class = "form-label" })
+        @Html.EditorFor(model => model.Cartao, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+}

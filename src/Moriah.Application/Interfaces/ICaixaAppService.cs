@@ -6,5 +6,7 @@ namespace Moriah.Application.Interfaces
     {
         Task Salvar(CaixaViewModel caixa);
         Task<IEnumerable<CaixaViewModel>> ObterTodosAsync();
+        Task<CaixaViewModel> ObterPorIdAsync(string id); 
+        Task AtualizarRegistro(CaixaViewModel model);
     }
 }

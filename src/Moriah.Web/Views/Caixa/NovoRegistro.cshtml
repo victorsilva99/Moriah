@@ -2,11 +2,11 @@
 
 @model CaixaViewModel;
 @{
-    ViewBag.Title = "title";
+    ViewBag.Title = "Novo Registro";
     Layout = "_Layout";
 }
 
-@using (Html.BeginForm("SalvarEntradas", "Caixa", FormMethod.Post))
+@using (Html.BeginForm("NovoRegistro", "Caixa", FormMethod.Post))
 {
     <div class="mb-3">
         @Html.LabelFor(model=>model.Data, "Data", new { @class = "form-label" })

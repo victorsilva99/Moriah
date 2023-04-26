@@ -23,4 +23,19 @@ public class CaixaService : ICaixaService
     {
         return await _caixaRepository.GetAllAsync();
     }
+
+    public async Task<Caixa> GetByIdAsync(string id)
+    {
+        return await _caixaRepository.GetByIdAsync(id);
+    }
+
+    public async Task<Caixa> GetByIdEFAsync(Guid id)
+    {
+        return await _caixaRepository.GetByIdEfAsync(id);
+    }
+
+    public async Task Update(Caixa caixa)
+    {
+        await _caixaRepository.Update(caixa);
+    }
 }

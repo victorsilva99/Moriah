@@ -4,8 +4,8 @@ namespace Moriah.Web.Controllers;
 
 public class ErroController : Controller
 {
-    public IActionResult Index()
+    public IActionResult Index(string erro)
     {
-        return View();
+        return View(erro);
     }
 }
