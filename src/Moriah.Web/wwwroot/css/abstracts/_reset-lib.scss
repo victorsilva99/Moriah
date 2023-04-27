@@ -2,13 +2,13 @@
 @import "fonts";
 
 .btn-primary {
-  background-color: $azul-principal !important;
-  color: $azul-marinho !important;
-  border: none !important;
-  cursor: pointer !important;
-  transition: background-color 0.3s ease !important;
-  
-  &:hover{
-    background-color: $azul-claro-esbranqueado !important;
-  }
+    background: linear-gradient(to right, #42C9D6, #2C616E) !important;
+    color: $azul-claro-gelo !important;
+    border: none !important;
+    cursor: pointer !important;
+    transition: background 2s ease-in-out;
+
+    &:hover {
+        background: linear-gradient(to right, #42C9D6, #20A2B4) !important;
+    }
 }

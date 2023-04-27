@@ -62,4 +62,10 @@ public class CaixaRepository : ICaixaRepository
         _context.Entradas?.Update(caixa);
         await _context.SaveChangesAsync();
     }
+
+    public async Task Delete(Caixa caixa)
+    {
+        _context.Entradas?.Remove(caixa);
+        await _context.SaveChangesAsync();
+    }
 }

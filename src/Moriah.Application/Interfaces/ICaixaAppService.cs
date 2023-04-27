@@ -8,5 +8,6 @@ namespace Moriah.Application.Interfaces
         Task<IEnumerable<CaixaViewModel>> ObterTodosAsync();
         Task<CaixaViewModel> ObterPorIdAsync(string id); 
         Task AtualizarRegistro(CaixaViewModel model);
+        Task ExcluirRegistro(string id);
     }
 }

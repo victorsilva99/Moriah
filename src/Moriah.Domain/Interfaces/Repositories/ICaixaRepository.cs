@@ -9,4 +9,5 @@ public interface ICaixaRepository
     Task<Caixa> GetByIdAsync(string id);
     Task<Caixa> GetByIdEfAsync(Guid id);
     Task Update(Caixa caixa);
+    Task Delete(Caixa caixa);
 }

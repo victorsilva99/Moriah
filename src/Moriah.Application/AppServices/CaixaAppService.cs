@@ -50,4 +50,9 @@ public class CaixaAppService : ICaixaAppService
             
         await _caixaService.Update(registroAtual);
     }
+
+    public async Task ExcluirRegistro(string id)
+    {
+        await _caixaService.Delete(id);
+    }
 }

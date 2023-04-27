@@ -45,4 +45,11 @@ public class CaixaController : Controller
         await _caixaAppService.AtualizarRegistro(caixa);
         return RedirectToAction("Index");
     }
+
+    [HttpPost]
+    public async Task<IActionResult> ExcluirRegistro(string id)
+    {
+        await _caixaAppService.ExcluirRegistro(id);
+        return RedirectToAction("Index");
+    }
 }

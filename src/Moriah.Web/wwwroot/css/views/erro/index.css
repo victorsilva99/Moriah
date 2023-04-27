@@ -61,6 +61,7 @@
 }
 
 body {
+  margin: auto;
   background-color: #F2FAFA;
   text-align: center;
   padding-top: 50px;

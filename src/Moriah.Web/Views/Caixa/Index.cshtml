@@ -13,26 +13,33 @@
 
 <table class="table table-hover">
     <thead>
-    <tr>
-        <th scope="col">Data</th>
-        <th scope="col">Notas</th>
-        <th scope="col">Moedas</th>
-        <th scope="col">Cartao</th>
-        <th scope="col">Total</th>
-        <th scope="col">Ações</th>
-    </tr>
+        <tr>
+            <th scope="col">Data</th>
+            <th scope="col">Notas</th>
+            <th scope="col">Moedas</th>
+            <th scope="col">Cartao</th>
+            <th scope="col">Total</th>
+            <th scope="col">Ações</th>
+        </tr>
     </thead>
     <tbody>
-    @foreach (var registro in Model)
-    {
-        <tr>
-            <td>@registro.Data.ToString("dd/MM/yyyy")</td>
-            <td>@($"{registro.Nota:C}")</td>
-            <td>@($"{registro.Moeda:C}")</td>
-            <td>@($"{registro.Cartao:C}")</td>
-            <td>@($"{registro.ObterTotal():C}")</td>
-            <td>@Html.ActionLink("", "EditarRegistro", "Caixa", new { id = registro.Id }, new { @class = "btn btn-secondary bx bx-edit-alt" })</td>
-        </tr>
-    }
+        @foreach (var registro in Model)
+        {
+            <tr>
+                <td>@registro.Data.ToString("dd/MM/yyyy")</td>
+                <td>@($"{registro.Nota:C}")</td>
+                <td>@($"{registro.Moeda:C}")</td>
+                <td>@($"{registro.Cartao:C}")</td>
+                <td>@($"{registro.ObterTotal():C}")</td>
+                <td class="d-flex gap-2">
+                    @Html.ActionLink("", "EditarRegistro", "Caixa", new { id = registro.Id }, new { @class = "btn btn-secondary bx bx-edit-alt" })
+
+                    @using (Html.BeginForm("ExcluirRegistro", "Caixa", new { id = registro.Id }, FormMethod.Post))
+                    {
+                        <button type="submit" class="btn btn-danger bx bx-trash"></button>
+                    }
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

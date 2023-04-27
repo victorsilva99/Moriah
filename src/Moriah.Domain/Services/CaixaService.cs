@@ -38,4 +38,10 @@ public class CaixaService : ICaixaService
     {
         await _caixaRepository.Update(caixa);
     }
+
+    public async Task Delete(string id)
+    {
+        var caixa = await _caixaRepository.GetByIdAsync(id);
+        await _caixaRepository.Delete(caixa);
+    }
 }

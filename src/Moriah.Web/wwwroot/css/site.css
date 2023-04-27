@@ -1,4 +1,4 @@
-@font-face {
+﻿@font-face {
   font-family: Montserrat;
   src: url(../../assets/fonts/Montserrat-Thin.ttf);
   font-weight: 100;
@@ -101,14 +101,14 @@
 }
 
 .btn-primary {
-  background-color: #66D4E2 !important;
-  color: #004E6E !important;
+  background: linear-gradient(to right, #42C9D6, #2C616E) !important;
+  color: #F2FAFA !important;
   border: none !important;
   cursor: pointer !important;
-  transition: background-color 0.3s ease !important;
+  transition: background 2s ease-in-out;
 }
 .btn-primary:hover {
-  background-color: #DCECEC !important;
+  background: linear-gradient(to right, #42C9D6, #20A2B4) !important;
 }
 
 @media (min-width: 768px) {
@@ -125,5 +125,3 @@ html {
 body {
   margin-bottom: 60px;
 }
-
-/*# sourceMappingURL=site.css.map */
