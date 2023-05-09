@@ -1,17 +1,16 @@
-using Serilog;
 using Moriah.Web.Middlewares;
-using Microsoft.EntityFrameworkCore;
-using Moriah.Infra.Data.Context;
 using Moriah.Web.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext(builder.Configuration);
 builder.Services.AddControllersWithViews();
+
 builder.Services.AddRazorPages();
 builder.Services.RegisterServices(builder.Configuration);
 builder.Services.AddAutoMapper();
 builder.Services.AddMvc();
+builder.Services.RegisterAllValidators();
 
 var app = builder.Build();
 if (!app.Environment.IsDevelopment())

@@ -19,6 +19,7 @@ public class CaixaAppService : ICaixaAppService
 
     public async Task Salvar(CaixaViewModel caixa)
     {
+        caixa.AtualizarValores();
         var map = _mapper.Map<Caixa>(caixa);
         await _caixaService.Insert(map);
     }

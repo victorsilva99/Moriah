@@ -22,6 +22,8 @@
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="wwwroot\css\erro\index.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-maskmoney\dist\jquery.maskMoney.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-maskmoney\dist\jquery.maskMoney.min.js" />
   </ItemGroup>
 
   <ItemGroup>

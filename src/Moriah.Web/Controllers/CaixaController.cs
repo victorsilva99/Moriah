@@ -28,6 +28,9 @@ public class CaixaController : Controller
     [HttpPost]
     public async Task<IActionResult> NovoRegistro(CaixaViewModel caixa)
     {
+        if (!ModelState.IsValid)
+            return View("NovoRegistro", caixa);
+        
         await _caixaAppService.Salvar(caixa);
         return RedirectToAction("Index");
     }

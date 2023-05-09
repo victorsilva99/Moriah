@@ -73,4 +73,9 @@ body {
   margin-bottom: 60px;
 }
 
+.field-validation-error {
+  font-size: 12px;
+  color: #ff0000;
+}
+
 /*# sourceMappingURL=site.css.map */

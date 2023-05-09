@@ -6,27 +6,36 @@
     Layout = "_Layout";
 }
 
-@using (Html.BeginForm("NovoRegistro", "Caixa", FormMethod.Post))
+@using (Html.BeginForm("NovoRegistro", "Caixa", FormMethod.Post, new { id = "formNovoRegistro" }))
 {
     <div class="mb-3">
-        @Html.LabelFor(model=>model.Data, "Data", new { @class = "form-label" })
-        @Html.TextBoxFor(model => model.Data, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control" })
+        @Html.LabelFor(model => model.Data, "Data", new { @class = "form-label" })
+        @Html.TextBoxFor(model => model.Data, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control", required = "required" })
+        @Html.ValidationMessageFor(model => model.Data)
     </div>
 
     <div class="mb-3">
-        @Html.LabelFor(model => model.Nota, "Notas", new { @class = "form-label" })
-        @Html.TextBoxFor(model => model.Nota, new { @class = "form-control" })
+        @Html.LabelFor(model => model.NotaString, "Notas", new { @class = "form-label" })
+        @Html.TextBoxFor(model => model.NotaString, new { @class = "form-control", placeholder = "R$ 0,00", data_thousands = ".", data_decimal = ",", data_prefix = "R$ " })
+        @Html.ValidationMessageFor(model => model.Nota)
     </div>
 
     <div class="mb-3">
-        @Html.LabelFor(model => model.Moeda, "Moedas", new { @class = "form-label" })
-        @Html.TextBoxFor(model => model.Moeda, new { @class = "form-control" })
+        @Html.LabelFor(model => model.MoedaString, "Moedas", new { @class = "form-label" })
+        @Html.TextBoxFor(model => model.MoedaString, new { @class = "form-control", placeholder = "R$ 0,00" })
+        @Html.ValidationMessageFor(model => model.Moeda)
     </div>
 
     <div class="mb-3">
-        @Html.LabelFor(model => model.Cartao, "Maquininha", new { @class = "form-label" })
-        @Html.TextBoxFor(model => model.Cartao, new { @class = "form-control" })
+        @Html.LabelFor(model => model.CartaoString, "Maquininha", new { @class = "form-label" })
+        @Html.TextBoxFor(model => model.CartaoString, new { @class = "form-control", placeholder = "R$ 0,00" })
+        @Html.ValidationMessageFor(model => model.Cartao)
     </div>
 
     <button type="submit" class="btn btn-primary">Salvar</button>
+}
+
+@section Scripts
+{
+    <script type="module" src="~/js/views/caixa/novoRegistro.js"></script>
 }

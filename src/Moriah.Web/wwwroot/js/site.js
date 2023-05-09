@@ -1,29 +1,31 @@
 ﻿const notyf = new Notyf({
-    duration: 3000,
+    duration: 4000,
     position: {
         x: 'right',
         y: 'top',
     },
+    ripple: false,
+    dismissible: true,
     types: [
         {
             type: 'warning',
-            background: 'orange',
+            background: '#f7cf19',
             icon: {
                 className: 'material-icons',
                 tagName: 'i',
-                text: 'warning'
+                text: 'warning',
+                color: 'white'
             }
         },
         {
-            type: 'error',
-            background: 'indianred',
-            duration: 2000,
-            dismissible: true
-        },
-        {
             type: 'info',
-            background: 'blue',
-            icon: false
+            background: '#2D91A3',
+            icon: {
+                className: 'material-icons',
+                tagName: 'i',
+                text: 'info',
+                color: 'white'
+            }
         }
     ]
 });

@@ -1,5 +1,8 @@
-﻿using Moriah.Application.AppServices;
+﻿using FluentValidation;
+using Moriah.Application.AppServices;
 using Moriah.Application.Interfaces;
+using Moriah.Application.Validations;
+using Moriah.Application.ViewModels;
 using Moriah.Domain.Interfaces.Repositories;
 using Moriah.Domain.Interfaces.Services;
 using Moriah.Domain.Services;
@@ -16,6 +19,7 @@ namespace Moriah.Web.Middlewares
 
             // application
             services.AddScoped<ICaixaAppService, CaixaAppService>();
+            services.AddScoped<IValidator<CaixaViewModel>, CaixaValidations>();
 
             // data
             services.AddScoped<ICaixaRepository, CaixaRepository>();
